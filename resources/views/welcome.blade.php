@@ -23,14 +23,14 @@
         <div id="signup">
             <h1>Sign Up for Free</h1>
 
-            <form action="" method="post">
+            <form action="{{ route('signup') }}" method="post">
 
                 <div class="top-row">
                     <div class="field-wrap">
                         <label>
                             First Name<span class="req">*</span>
                         </label>
-                        <input type="text" required autocomplete="off"/>
+                        <input type="text" name="first_name" required autocomplete="on"/>
                     </div>
 
                 </div>
@@ -39,18 +39,20 @@
                     <label>
                         Email Address<span class="req">*</span>
                     </label>
-                    <input type="email" required autocomplete="off"/>
+                    <input type="email" name="email" required autocomplete="on"/>
                 </div>
 
                 <div class="field-wrap">
                     <label>
                         Set A Password<span class="req">*</span>
                     </label>
-                    <input type="password" required autocomplete="off"/>
+                    <input type="password" name="password" required autocomplete="off"/>
                 </div>
 
                 <button type="submit" class="button button-block">
                 Register</button>
+
+                {{ csrf_field() }}
 
             </form>
 
@@ -65,7 +67,7 @@
                     <label>
                         Email Address<span class="req">*</span>
                     </label>
-                    <input type="email" required autocomplete="off"/>
+                    <input type="email" required autocomplete="on"/>
                 </div>
 
                 <div class="field-wrap">
@@ -79,6 +81,8 @@
 
                 <button class="button button-block">
                 Log In</button>
+
+                {{ csrf_field() }}
 
             </form>
 
