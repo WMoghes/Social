@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/', [
+    'uses' => 'UserController@getHome',
+    'as' => 'home'
+]);
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [
@@ -32,10 +36,4 @@ Route::post('/signin', [
     'uses' => 'UserController@postSignin',
     'as' => 'signin'
 ]);
-/*
- * you should create a new route for this forms
- * */
-Route::get('/', [
-    'uses' => 'UserController@getHome',
-    'as' => 'home'
-]);
+

@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function getHome(){
-        return view('welcome');
+        if(Auth::check()){
+            return redirect()->route('dashboard');
+        }else {
+            return view('welcome');
+        }
     }
     public function postSignup(Request $request){
 
