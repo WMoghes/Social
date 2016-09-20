@@ -1,0 +1,17 @@
+.new-post {
+    padding:16px 0;
+    border-bottom: 1px solid #2b542c;
+}
+.new-post header,
+.posts header {
+    margin-bottom: 20px;
+}
+.posts .post{
+    padding-left: 10px;
+    border-left: 6px solid midnightblue;
+    margin-bottom: 30px;
+}
+.posts .post .info{
+    color: #8c8c8c;
+    font-style: italic;
+}
