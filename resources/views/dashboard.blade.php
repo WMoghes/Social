@@ -27,7 +27,7 @@
             <header>
                 <h3>What the other people say....</h3>
             </header>
-    @foreach($posts as $post)
+            @foreach($posts as $post)
 
                 <section class="post">
                     <p>{{ $post->body }}</p>
@@ -39,12 +39,36 @@
                         <a href="#">Dislike</a>
                         @if(Auth::user() == $post->user)
                             |
-                            <a href="#">Edit</a> |
+                            <a id="edit-post-a" href="#">Edit</a> |
                             <a href="{{ route('delete.post', ['post_id' => $post->id]) }}">Delete</a>
                         @endif
                     </div>
                 </section>
-    @endforeach
+            @endforeach
         </div>
     </section>
+
+    <div class="modal fade" id="edit-model" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Edit Post</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="edit-body">Edit the post</label>
+                            <textarea class="form-control" name="body-post" id="edit-body" rows="5"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 @endsection

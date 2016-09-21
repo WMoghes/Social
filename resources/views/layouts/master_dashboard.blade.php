@@ -338,6 +338,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{ URL::to('public/dist/js/sb-admin-2.js') }}"></script>
 
+    <script src="{{ URL::to('public/js/app.js') }}"></script>
+
 </body>
 
 </html>
