@@ -15,3 +15,23 @@
     color: #8c8c8c;
     font-style: italic;
 }
+.error {
+    border: 1px solid red;
+    margin-top: 15px;
+    color: red;
+}
+.error ul,
+.success ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.success {
+    border: 1px solid green;
+    margin-top: 15px;
+    color: green;
+}
+.error,
+.success{
+    text-align: center;
+}
