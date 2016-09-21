@@ -11,7 +11,7 @@
             <header>
                 <h3>What do you have to say, Today?</h3>
             </header>
-            <form action="{{ route('post.create') }}" method="post">
+            <form action="{{ route('create.post') }}" method="post">
                 <div class="form-group">
                     <textarea class="form-control" name="body" id="new-post" rows="5"
                               placeholder="Your post"></textarea>
@@ -36,9 +36,12 @@
                     </div>
                     <div class="interaction">
                         <a href="#">Like</a> |
-                        <a href="#">Dislike</a> |
-                        <a href="#">Edit</a> |
-                        <a href="#">Delete</a>
+                        <a href="#">Dislike</a>
+                        @if(Auth::user() == $post->user)
+                            |
+                            <a href="#">Edit</a> |
+                            <a href="{{ route('delete.post', ['post_id' => $post->id]) }}">Delete</a>
+                        @endif
                     </div>
                 </section>
     @endforeach
