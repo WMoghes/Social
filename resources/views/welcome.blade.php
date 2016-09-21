@@ -13,17 +13,7 @@
 
 <body>
 <div class="container">
-    @if(count($errors) > 0)
-        <div class="row">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>
-                        {{ $error }}
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+@include('includes.message-block')
 </div>
 
 <div class="form">

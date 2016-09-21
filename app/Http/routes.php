@@ -12,28 +12,33 @@
 */
 
 Route::get('/', [
-    'uses' => 'UserController@getHome',
-    'as' => 'home'
+    'uses'      => 'UserController@getHome',
+    'as'        => 'home'
 ]);
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [
-        'uses' => 'UserController@getDashboard',
-        'as' => 'dashboard'
+        'uses'  => 'PostController@getDashboard',
+        'as'    => 'dashboard'
     ]);
     Route::get('/logout', [
-        'uses' => 'UserController@logout',
-        'as' => 'logout'
+        'uses'  => 'UserController@logout',
+        'as'    => 'logout'
     ]);
 });
 
 Route::post('/signup', [
-    'uses' => 'UserController@postSignup',
-    'as' => 'signup'
+    'uses'      => 'UserController@postSignup',
+    'as'        => 'signup'
 ]);
 
 Route::post('/signin', [
-    'uses' => 'UserController@postSignin',
-    'as' => 'signin'
+    'uses'      => 'UserController@postSignin',
+    'as'        => 'signin'
+]);
+
+Route::post('/create-post', [
+    'uses'      => 'PostController@postCreatePost',
+    'as'        => 'post.create'
 ]);
 
