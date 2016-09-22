@@ -29,7 +29,7 @@
             </header>
             @foreach($posts as $post)
 
-                <section class="post">
+                <section class="post" data-postid="{{ $post->id }}">
                     <p>{{ $post->body }}</p>
                     <div class="info">
                         Posted by {{ $post->user->first_name }} on {{ $post->created_at }}
