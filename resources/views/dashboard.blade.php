@@ -39,7 +39,7 @@
                         <a href="#">Dislike</a>
                         @if(Auth::user() == $post->user)
                             |
-                            <a id="edit-post-a" href="#">Edit</a> |
+                            <a class="edit-post-a" href="#">Edit</a> |
                             <a href="{{ route('delete.post', ['post_id' => $post->id]) }}">Delete</a>
                         @endif
                     </div>
@@ -66,9 +66,14 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" id="modal-save">Save changes</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 @endsection
+
+<script>
+    var url = '{{ route('edit') }}';
+    var token = '{{ Session::token() }}';
+</script>
