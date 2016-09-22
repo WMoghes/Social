@@ -1,3 +1,6 @@
+.container-fluid {
+    margin-top: 50px;
+}
 .new-post {
     padding:16px 0;
     border-bottom: 1px solid #2b542c;
@@ -34,7 +37,4 @@
 .error,
 .success{
     text-align: center;
-}
-.container-fluid {
-    margin-top: 50px;
 }
