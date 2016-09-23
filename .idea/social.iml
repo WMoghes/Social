@@ -65,6 +65,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jQuery-2.0.0" level="application" />
+    <orderEntry type="library" name="jQuery UI-1.10.2" level="application" />
     <orderEntry type="module-library">
       <library name="PHP">
         <CLASSES>
@@ -193,7 +195,5 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" name="jQuery-2.0.0" level="application" />
-    <orderEntry type="library" name="jQuery UI-1.10.2" level="application" />
   </component>
 </module>

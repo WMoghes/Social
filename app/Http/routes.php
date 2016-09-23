@@ -52,3 +52,18 @@ Route::post('/edit',[
     'uses'      => 'PostController@postEditPost',
     'as'        => 'edit'
 ]);
+
+Route::get('/account', [
+    'uses'      => 'UserController@getAccount',
+    'as'        => 'account'
+]);
+
+Route::post('/account-update', [
+    'uses'      => 'UserController@postAccountUpdate',
+    'as'        => 'account.update'
+]);
+
+Route::get('/user-image/{filename}', [
+    'uses'      => 'UserController@getUserImage',
+    'as'        => 'account.image'
+]);
